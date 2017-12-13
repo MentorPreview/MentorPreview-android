@@ -18,3 +18,4 @@ https://qiita.com/satorufujiwara/items/0f95ccfc3820d3ee1370
 - Glide : https://github.com/bumptech/glide
 
 非同期処理などにRxJavaを使いたいところだが、coroutineがKotlin 1.3で正式にデビューする予定なのでこちらで書いていきたい。
+https://qiita.com/k-kagurazaka@github/items/8595ca60a5c8d31bbe37
