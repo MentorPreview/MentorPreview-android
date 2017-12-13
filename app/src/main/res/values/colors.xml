@@ -2,8 +2,8 @@
 <resources>
     <!-- main colors -->
     <color name="colorPrimary">#FFFFFFFF</color>
-    <color name="colorPrimaryDark">#FFEEEEEE</color>
-    <color name="colorAccent">#FFC1E800</color>
+    <color name="colorPrimaryDark">#DDCDCDCD</color>
+    <color name="colorAccent">#FFFF5722</color>
 
     <!-- text colors -->
     <color name="text_primary">#DE000000</color> <!-- 87% -->

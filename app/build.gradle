@@ -46,6 +46,10 @@ android {
             dimension "default"
         }
     }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
 }
 
 ext {
