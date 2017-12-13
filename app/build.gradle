@@ -1,32 +1,111 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 26
+
+    // @see https://developer.android.com/studio/build/gradle-plugin-3-0-0-migration.html?utm_source=android-studio#variant_aware
+    flavorDimensions "default"
+
+    compileSdkVersion 27
     defaultConfig {
         applicationId "mentor.preview.io.mentorprev"
-        minSdkVersion 15
-        targetSdkVersion 26
+        minSdkVersion 19
+        targetSdkVersion 27
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors {
+        develop {
+            dimension "default"
+
+            applicationIdSuffix '.develop'
+            versionNameSuffix '.develop'
+        }
+
+        production {
+            dimension "default"
+        }
+    }
+}
+
+ext {
+    // Support library
+    support_lib_version = '27.0.2'
+    support_constraint_layout_version = '1.0.2'
+
+    // core
+    databinding_version = '3.0.1'
+    dagger_version = '2.13'
+    android_architecture_component_version = '1.0.0'
+
+    // api
+    retrofit_version = "2.3.0"
+    okhttp_version = "3.9.0"
+
+    // Json
+    moshi_version = '1.5.0'
+
+    // image
+    glide_version = "4.2.0"
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    // core
+    kapt "com.android.databinding:compiler:$databinding_version"
+    implementation "com.google.dagger:dagger:$dagger_version"
+    implementation "com.google.dagger:dagger-android:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+
+    // support
+    implementation "com.android.support:appcompat-v7:$support_lib_version"
+    implementation "com.android.support.constraint:constraint-layout:$support_constraint_layout_version"
+    implementation "com.android.support:recyclerview-v7:$support_lib_version"
+    implementation "com.android.support:cardview-v7:$support_lib_version"
+    implementation "com.android.support:design:$support_lib_version"
+
+    // api
+    implementation "com.squareup.moshi:moshi:$moshi_version"
+    implementation "com.squareup.moshi:moshi-kotlin:$moshi_version"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    implementation "com.github.bumptech.glide:okhttp-integration:$glide_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
+    // android architecture component
+    implementation "android.arch.lifecycle:runtime:1.0.3"
+    implementation "android.arch.lifecycle:extensions:$android_architecture_component_version"
+    implementation "android.arch.lifecycle:reactivestreams:$android_architecture_component_version"
+    kapt "android.arch.lifecycle:compiler:$android_architecture_component_version"
+    implementation "android.arch.persistence.room:runtime:$android_architecture_component_version"
+    kapt "android.arch.persistence.room:compiler:$android_architecture_component_version"
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'

@@ -8,4 +8,74 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Text theme -->
+    <style name="TextDisplay4" parent="TextAppearance.AppCompat.Display4">
+        <item name="android:textSize">@dimen/text_display_4</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="TextDisplay3" parent="TextAppearance.AppCompat.Display3">
+        <item name="android:textSize">@dimen/text_display_3</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="TextDisplay2" parent="TextAppearance.AppCompat.Display2">
+        <item name="android:textSize">@dimen/text_display_2</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="TextDisplay1" parent="TextAppearance.AppCompat.Display1">
+        <item name="android:textSize">@dimen/text_display_1</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="TextHeadLine" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:textSize">@dimen/text_headline</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="TextTitle" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">@dimen/text_title</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="TextSubHeading" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textSize">@dimen/text_sub_heading</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="TextBody2" parent="TextAppearance.AppCompat.Body2">
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="TextBody1" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="TextCaption" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">@dimen/text_caption</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="TextMenu" parent="TextAppearance.AppCompat.Menu">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="TextButton" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">@dimen/text_button</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
 </resources>
